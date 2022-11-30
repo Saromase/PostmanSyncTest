@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "726c1501-adfd-4cee-bc24-51e6ac1adfb0",
+		"_postman_id": "09b0694d-3c86-45c4-a3ad-da1de57620c9",
 		"name": "Refonte",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24701911-09b0694d-3c86-45c4-a3ad-da1de57620c9"
 	},
 	"item": [
 		{
@@ -13,7 +14,10 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des applications enregistrées",
-							"id": "08a3b475-09de-4ce7-b808-f2f9cf3316ac",
+							"id": "7d803a1d-faba-4721-854a-e77442e6e67b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -37,7 +41,10 @@
 						},
 						{
 							"name": "Enregistrer une nouvelle application",
-							"id": "80c3dfcc-0bbd-429b-aa05-025cc30bf72e",
+							"id": "0ee24574-93b3-4716-90a6-7a0fd83fc0a2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -70,7 +77,10 @@
 						},
 						{
 							"name": "Récupérer une seule application",
-							"id": "c350d6d4-dc14-476c-93d5-aabdfddd7132",
+							"id": "f374168e-8045-4ef8-b257-f2290b147746",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -91,7 +101,6 @@
 									],
 									"variable": [
 										{
-											"id": "ee2806e5-e551-4f7b-8b56-c48ecbe3566b",
 											"key": "client_id",
 											"value": null
 										}
@@ -102,7 +111,10 @@
 						},
 						{
 							"name": "Modifier une application",
-							"id": "38f168b8-d6f3-4714-963b-cf355790c35c",
+							"id": "e34e6f0e-1d3c-466b-958a-2d7cb5266288",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -132,7 +144,6 @@
 									],
 									"variable": [
 										{
-											"id": "9feaf416-a932-4beb-b331-4fc4f6841958",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -144,7 +155,10 @@
 						},
 						{
 							"name": "Supprimer une application",
-							"id": "06bebdfd-a326-4f0a-9f95-75bdf6dec00b",
+							"id": "0a6110d6-f80e-407e-863d-898d4a182e0c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -165,7 +179,6 @@
 									],
 									"variable": [
 										{
-											"id": "87739683-8c0d-4f0f-9a9e-e1da0808584f",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -186,11 +199,15 @@
 											"    pm.environment.set('client_secret', pm.response.json().client_secret)",
 											"}"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"id": "9b0846a1-f0fe-4e29-b7de-aefedf8af28f"
 									}
 								}
 							],
-							"id": "77f39dc8-c6ff-45a3-b1ba-8b12356042f0",
+							"id": "bfc3db32-6d26-4b6a-811b-243c0889c14b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -221,7 +238,6 @@
 									],
 									"variable": [
 										{
-											"id": "79118275-780b-4d3a-8ee2-2645e8ac3ef0",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -232,7 +248,7 @@
 							"response": []
 						}
 					],
-					"id": "7c185295-8226-4853-9211-bf1f892ea561",
+					"id": "80279521-7d86-4f7e-a6ee-b82e3ce9bd64",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -240,7 +256,8 @@
 								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"id": "46e814dd-1d53-49ae-8b4a-5434667e4d64"
 							}
 						},
 						{
@@ -249,7 +266,8 @@
 								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"id": "127e8ea8-d19f-4df6-b0a8-216b2482a73b"
 							}
 						}
 					]
@@ -270,11 +288,15 @@
 											"    pm.environment.set(\"X-USER\", btoa(JSON.stringify(response)));",
 											"}"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"id": "357db043-8ac7-46da-83bd-9a41964bb625"
 									}
 								}
 							],
-							"id": "c24eb699-4dc6-4b04-9cd2-c8ab2fba6cc5",
+							"id": "261de1bf-89ef-4ac5-b98c-e3887307cae6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -328,11 +350,15 @@
 											"    pm.environment.set(\"auth_access_token_expire\", expired_at + pm.response.json().expires_in);",
 											"}"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"id": "b8159fa5-3065-402c-9ee7-d4720f915b88"
 									}
 								}
 							],
-							"id": "e9729df9-c51b-400f-8360-2dc2097bf612",
+							"id": "b60dc4f8-bd1b-482f-a3e3-dcdc41037f86",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -405,11 +431,15 @@
 											"pm.environment.set(\"auth_access_token_expire\", 0);",
 											"console.log('Revocation du token et mise à 0 de l\\'expiration')"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"id": "03297bca-b620-4b57-ae1c-406df09647f2"
 									}
 								}
 							],
-							"id": "8b606d71-8cb2-4eef-98e4-9ce40eac8cf1",
+							"id": "be2e3a16-c0ad-489e-9cf7-b9c43818b8c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -460,10 +490,10 @@
 							"response": []
 						}
 					],
-					"id": "9717dea5-d8b5-4441-999e-3bc1fc76186f"
+					"id": "ccaeb2dd-f743-43db-abef-8afa31350153"
 				}
 			],
-			"id": "eb7e3fea-aea1-4e91-83bf-92e3dd0540d6",
+			"id": "1470f5eb-ad1d-4f85-835a-0bfea61958d3",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -505,7 +535,8 @@
 							"        }",
 							"    });",
 							"}"
-						]
+						],
+						"id": "2c83ba36-7e91-4595-8946-c60f699bb7af"
 					}
 				},
 				{
@@ -514,7 +545,8 @@
 						"type": "text/javascript",
 						"exec": [
 							""
-						]
+						],
+						"id": "83e9609f-3c7a-4952-accd-1379db5b06ea"
 					}
 				}
 			]
@@ -530,7 +562,10 @@
 							"item": [
 								{
 									"name": "Récupérer la liste des BlueApps",
-									"id": "c37e0f19-556d-4a33-b62d-8b831044bc9c",
+									"id": "b0e5e3ca-2551-48f9-bdfe-f7870ba238cd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -541,11 +576,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query ($page : Int, $itemPerPage : Int) {\n    getBlueApps(page : $page, itemsPerPage : $itemPerPage) {\n        collection {\n            id\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            description\n            version\n            status\n            createdAt\n            updatedAt\n            managers {\n                entities {\n                    id\n                    isManager\n                }\n                users {\n                    id\n                    firstname\n                    lastname\n                }\n            }\n            directory {\n                id\n                entityId\n                name {\n                    language\n                    text\n                    translations {\n                        language\n                        text\n                    }\n                }\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
-												"variables": ""
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -561,7 +592,10 @@
 								},
 								{
 									"name": "Récupérer une BlueApp",
-									"id": "2966aa5e-75ff-4c3e-a847-c430060c386f",
+									"id": "9ac02242-2d66-48a8-9fda-5ac1fdf4ca17",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -572,11 +606,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query ($id: String!) {\n    getBlueApp(id : $id) {\n        id\n        name {\n        language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        directory {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
-												"variables": "{\n    \"id\" : \"01G2W6C9SGTR50GAP5C8WMERVR\"\n}"
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -592,7 +622,10 @@
 								},
 								{
 									"name": "Récupérer la structure d'une Blueapp",
-									"id": "af73d118-d8a1-4bb9-b9cc-ca866327110f",
+									"id": "b0bcab97-cc82-47af-82f6-4515f9e4e0ae",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -603,11 +636,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query($id: String!) {\n    getBlueAppStructure(id: $id) {\n        id\n\n    }\n}",
-												"variables": "{\n    \"id\": \"2\"\n}"
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -623,7 +652,10 @@
 								},
 								{
 									"name": "Récupérer la liste des repertoires",
-									"id": "ed8a4a68-4fdc-4ab2-a815-890a467daf3b",
+									"id": "c1af4c84-eeee-43f2-8083-5a0290064493",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -634,11 +666,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "{\n    getBlueAppDirectories{\n        collection {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
-												"variables": ""
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -654,7 +682,10 @@
 								},
 								{
 									"name": "Récupérer un répertoire",
-									"id": "404f6a18-1633-42e5-bdca-d3da215901da",
+									"id": "3ddd8ead-5aa6-4f51-a515-67dfc5b4a908",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -665,11 +696,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query($id : String!) {\n    getBlueAppDirectory(id : $id) {\n        id\n        entityId\n        name {\n            language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        createdAt\n        updatedAt\n    }\n}",
-												"variables": "{\n    \"id\" : \"01FV1X0A8SXM9S41VXCJP4EVTG\"\n}"
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -685,7 +712,10 @@
 								},
 								{
 									"name": "Récupérer le thème BlueApp",
-									"id": "97701ed0-3a6f-4487-824b-d79472fcd77c",
+									"id": "2d4bc90d-3a0f-435c-bac5-456be0b6fae5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -696,11 +726,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query($entityId : String!) {\n    getBlueAppTheme(entityId: $entityId){\n        entityId\n        header\n        footer\n    }\n}",
-												"variables": "{\n    \"entityId\" : \"1\"\n}"
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -715,14 +741,17 @@
 									"response": []
 								}
 							],
-							"id": "4d0e0ed2-50d8-4eee-b697-140a12bf6f87"
+							"id": "ea61538c-f01d-4d37-961b-22dab3a99d31"
 						},
 						{
 							"name": "BlueAppEntry",
 							"item": [
 								{
 									"name": "Récupérer une Saisie",
-									"id": "6bc15c9c-7ed9-410d-b798-fbc04a792f0c",
+									"id": "877f6572-217c-4a7a-9037-3ec2b848ff51",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -733,11 +762,7 @@
 											}
 										],
 										"body": {
-											"mode": "graphql",
-											"graphql": {
-												"query": "query ($id: String!, $blueAppId : String!) {\n   getBlueAppEntry(id: $id, blueAppId : $blueAppId) {\n       id\n       entityId\n       author\n       number\n       updatedBy\n       createdAt\n       updatedAt\n   }\n}",
-												"variables": "{\n    \"blueAppId\" : \"01FV1X0A9RABJN1NE1BBZWR83Y\",\n    \"id\" : \"1\" \n}"
-											}
+											"mode": "graphql"
 										},
 										"url": {
 											"raw": "{{gateway_baseURL}}/graphql",
@@ -752,7 +777,7 @@
 									"response": []
 								}
 							],
-							"id": "4e8cb669-7d7f-408f-aed1-0259091efddf"
+							"id": "fba32ee6-6c52-439d-b46b-99b6d0e190f3"
 						},
 						{
 							"name": "User",
@@ -762,7 +787,10 @@
 									"item": [
 										{
 											"name": "Récupérer un utilisateur",
-											"id": "6ab2ee43-bbfb-4636-85e1-19f2a2450905",
+											"id": "320f9da1-e183-4e90-a1de-ab2523511fdf",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -773,11 +801,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($id : String!) {\n    getUser(id : $id) {\n        id\n        login\n        firstName\n        lastName\n        initials\n        isAdmin\n        blocked\n        reformed\n        fax\n        mobil\n        phone\n        language\n        emails {\n            email\n            verify\n            main\n        }\n        entities\n    }\n}",
-														"variables": "{\n    \"id\" : \"3\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -793,7 +817,10 @@
 										},
 										{
 											"name": "Récupérer la liste des utilisateurs",
-											"id": "41cd9f73-c21c-45f7-87bc-a0ae56bc8516",
+											"id": "90f4177f-ff9f-446c-b0f5-78f71bc8d429",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -804,11 +831,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query($entityId: String, $page: Int, $itemsPerPage: Int) {\n    getUsers(entityId: $entityId, page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            firstName\n            lastName\n            initials\n            isAdmin\n            login\n            phone\n            mobil\n            fax\n            reformed\n            blocked\n            emails {\n                email\n                main\n                verify\n            }\n            entities\n            mainEntity\n        }\n    }\n}",
-														"variables": "{\n    \"entityId\" : \"1\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -823,14 +846,17 @@
 											"response": []
 										}
 									],
-									"id": "2d8d4aaa-e590-46e1-ad8b-ef3a713d2c96"
+									"id": "a5edc4ba-70b8-4b05-bcfa-a6d6689d5f6a"
 								},
 								{
 									"name": "Group",
 									"item": [
 										{
 											"name": "Récupérer un groupe",
-											"id": "a5d91b13-2830-40e6-974e-fb2c87f01787",
+											"id": "342f4f55-f642-4421-bbed-07f5b3f7a630",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -841,11 +867,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($id : String!) {\n    getGroup(id : $id) {\n        id\n        label\n        code\n        entityId\n        groupType {\n            id\n            label\n        }\n    }\n}",
-														"variables": "{\n    \"id\" : \"2\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -861,7 +883,10 @@
 										},
 										{
 											"name": "Récupérer un type de groupe",
-											"id": "231efccd-ffcd-4a91-841a-b5e19b0d409c",
+											"id": "f220da9f-4ca5-4da2-b732-fce8c403cded",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -872,11 +897,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($id : String!, $entityId : String) {\n    getGroupType(id : $id, entityId : $entityId) {\n        id\n        label\n        code\n        groups {\n            id\n            code\n            label\n            entityId\n        }\n    }\n}",
-														"variables": "{\n    \"id\" : \"1003\",\n    \"entityId\" : \"1\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -892,7 +913,10 @@
 										},
 										{
 											"name": "Récupérer la liste des type de groupe",
-											"id": "89a35a8a-4238-4ae2-8f27-3a6f1febba8b",
+											"id": "6344086e-cf47-4da2-b59d-371a4a3e760e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -903,11 +927,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($entityId : String) {\n    getGroupTypes(entityId : $entityId) {\n        collection {\n            id\n            label\n            code\n        }\n    }\n}",
-														"variables": "{\n    \"entityId\" : \"1\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -923,7 +943,10 @@
 										},
 										{
 											"name": "Récupérer la liste des  groupes",
-											"id": "92bddfe0-fafb-407b-a226-60fdfa5e286b",
+											"id": "3989ae60-b937-4e95-b8cd-79913051f419",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -934,11 +957,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($entityId : String, $groupTypeId : String, $search : String, $page : Int, $itemsPerPage : Int) {\n    getGroups(entityId : $entityId, groupTypeId : $groupTypeId, search : $search, page : $page, itemsPerPage : $itemsPerPage ) {\n        collection {\n            id\n            label\n            code\n            groupType {\n                id\n                label\n            }\n            entityId\n        }\n    }\n}",
-														"variables": "{\n    \"entityId\" : \"1\",\n    \"groupTypeId\" : \"1013\",\n    \"itemsPerPage\" : 1\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -953,14 +972,17 @@
 											"response": []
 										}
 									],
-									"id": "064bba21-c04f-4583-9207-c5478fc6558a"
+									"id": "b657c471-7f91-4660-8524-c8d02e4a4870"
 								},
 								{
 									"name": "Entity",
 									"item": [
 										{
 											"name": "Récupérer une entité",
-											"id": "bde4e540-f184-400a-a0f0-866e9a243daa",
+											"id": "6a0c9ff4-b7dc-4e54-afd6-929693156117",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -971,11 +993,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($id : String!) {\n    getEntity(id : $id) {\n        id\n        label\n        main\n        address\n        beds\n        code\n        defaultLanguage\n        employees\n        finenessNumber\n        had\n        directory {\n            id\n            code\n            label\n        }\n    }\n}",
-														"variables": "{\n    \"id\" : \"2\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -991,7 +1009,10 @@
 										},
 										{
 											"name": "Récupérer un repertoire d'entité",
-											"id": "dd132085-4d29-4ef1-99e1-80afceac4b6a",
+											"id": "a44bd77b-e95d-48c4-b1f5-c5c7fe995a1f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -1002,11 +1023,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query ($id : String!) {\n    getEntityDirectory(id : $id) {\n        id\n        label\n        code\n    }\n}",
-														"variables": "{\n    \"id\" : \"1\"\n}"
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -1022,7 +1039,10 @@
 										},
 										{
 											"name": "Récupérer la liste des entités",
-											"id": "c224f8d3-4382-4585-abc4-04d7a9744434",
+											"id": "f801e100-124c-4959-9e35-b8db157afe0a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -1033,11 +1053,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query($page: Int, $itemsPerPage: Int) {\n    getEntities(page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            address\n            beds\n            code\n            defaultLanguage\n            employees\n            finenessNumber\n            had\n            label\n            main\n            directory {\n                id\n                label\n                code\n            }\n        }\n    }\n}",
-														"variables": ""
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -1053,7 +1069,10 @@
 										},
 										{
 											"name": "Récupérer la liste des répertoire d'entité",
-											"id": "ae1ef7c5-2001-4ef6-ad6c-65f4543bb3b4",
+											"id": "b8bee34f-8f54-4592-b044-9d4545519eda",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
 											"request": {
 												"method": "POST",
 												"header": [
@@ -1064,11 +1083,7 @@
 													}
 												],
 												"body": {
-													"mode": "graphql",
-													"graphql": {
-														"query": "query($page: Int, $itemsPerPage: Int) {\n    getEntityDirectories(page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            label\n            code\n        }\n    }\n}",
-														"variables": ""
-													}
+													"mode": "graphql"
 												},
 												"url": {
 													"raw": "{{gateway_baseURL}}/graphql",
@@ -1083,13 +1098,13 @@
 											"response": []
 										}
 									],
-									"id": "0a387323-6f40-4b0e-a42e-c4f07caa60a5"
+									"id": "e81124c7-0072-4d1d-96de-dda2a53735f6"
 								}
 							],
-							"id": "c8326da7-6a66-4a2e-abb8-fc2db807c10b"
+							"id": "119bbdc6-f395-4c9a-aac5-1d6adf9607cc"
 						}
 					],
-					"id": "75e941e0-b553-4358-88ec-8bc00f7cfb8a"
+					"id": "a9c1b1c0-ade5-4d02-851b-95b6f936eccf"
 				},
 				{
 					"name": "Rest",
@@ -1099,7 +1114,10 @@
 							"item": [
 								{
 									"name": "Récupérer la liste des BlueApps",
-									"id": "34b70a63-acdc-4d8e-a662-345fd4cb1da8",
+									"id": "24b66a6e-75d2-47b1-99fb-5cafb5f5956e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1133,7 +1151,10 @@
 								},
 								{
 									"name": "Récupérer une BlueApp",
-									"id": "09f01ad0-4d87-413a-bd0d-603c8686629f",
+									"id": "dbaba2de-7ee7-442c-8942-677dd3d4aeff",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1164,7 +1185,6 @@
 											],
 											"variable": [
 												{
-													"id": "9316398d-20d9-456f-a951-265732272cb8",
 													"key": "id",
 													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 													"description": "Identifiant de la BlueApp"
@@ -1176,7 +1196,10 @@
 								},
 								{
 									"name": "Récupérer la structure d'une BlueApp",
-									"id": "aafeb0da-d056-47ca-bbb7-23db3826649d",
+									"id": "db457b97-3454-4721-9cfd-107a46cecb22",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1198,7 +1221,6 @@
 											],
 											"variable": [
 												{
-													"id": "c1fc695a-b8e4-4f26-8b8a-f8375549ff5d",
 													"key": "id",
 													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 													"description": "Identifiant de la BlueApp"
@@ -1210,7 +1232,10 @@
 								},
 								{
 									"name": "Récupérer la liste des répertoires blueapp",
-									"id": "2ca6addd-4b92-414a-8801-91ad7aefaa90",
+									"id": "1362eaee-551a-424d-b1db-cadc67416102",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1244,7 +1269,10 @@
 								},
 								{
 									"name": "Récupérer un répertoire",
-									"id": "94053e99-c324-48e6-9b99-6bc07d726478",
+									"id": "f98c0609-ac96-4492-8b13-11432c0339c5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1275,7 +1303,6 @@
 											],
 											"variable": [
 												{
-													"id": "900834c3-c064-4337-9618-11b77fe4aa4c",
 													"key": "id",
 													"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
 													"description": "Identifiant du répertoire"
@@ -1287,7 +1314,10 @@
 								},
 								{
 									"name": "Récupérer le theme des BlueApp",
-									"id": "a729bdc9-ed28-4d5c-b7d9-f3d9f1af579a",
+									"id": "dbca3397-757d-4d10-a119-91a77ae5e227",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1318,7 +1348,6 @@
 											],
 											"variable": [
 												{
-													"id": "a77f1d92-64ba-4130-8457-45d4d8a46dfe",
 													"key": "entityId",
 													"value": "1"
 												}
@@ -1328,14 +1357,17 @@
 									"response": []
 								}
 							],
-							"id": "90166c94-0a48-4999-b1e2-a5ec2d9ffc64"
+							"id": "a1d967f3-6e06-43de-bd1e-bde40f03b2b7"
 						},
 						{
 							"name": "BlueAppEntry",
 							"item": [
 								{
 									"name": "Créer une nouvelle saisie",
-									"id": "75e57215-df5b-41fa-93a0-57e74f9437ad",
+									"id": "084228e3-7e7b-4b70-abfa-cf8aa9c862d3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1376,7 +1408,6 @@
 											],
 											"variable": [
 												{
-													"id": "63e52c96-d0ee-43e5-8f52-2a564b40884c",
 													"key": "blueAppId",
 													"value": null,
 													"description": "Identifiant de la BlueApp"
@@ -1388,7 +1419,10 @@
 								},
 								{
 									"name": "Récupération d'une saisie",
-									"id": "967e7f7f-7b9c-4fee-b9ff-6a72a57bb11b",
+									"id": "b5272cf1-2703-47a6-a976-b6338f7dbd37",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1421,13 +1455,11 @@
 											],
 											"variable": [
 												{
-													"id": "aa0db0d3-f26f-44d7-a104-fdaa94d0efc8",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
-													"id": "5413ad8c-1ae3-452b-9fe1-20b6cdca7519",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1439,7 +1471,10 @@
 								},
 								{
 									"name": "Mettre à jour une saisie",
-									"id": "39cab4b5-1cca-4cc3-a2f7-98e38b2958d1",
+									"id": "08e6ce81-00ee-40ed-b13d-614ac4b9c36a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1481,13 +1516,11 @@
 											],
 											"variable": [
 												{
-													"id": "c9ded1dd-5e48-4bdd-a70a-bd9c126a911f",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
-													"id": "9c30f8f5-7c48-423b-a536-a3971db4c51e",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1499,7 +1532,10 @@
 								},
 								{
 									"name": "Créer une nouvelle version d'une saisie",
-									"id": "823136ef-aa11-4c70-ab24-bc2ab280562a",
+									"id": "60d8f176-644b-4de3-87b9-77725fed57b2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1541,13 +1577,11 @@
 											],
 											"variable": [
 												{
-													"id": "13a99972-7838-444d-b8a7-0c59e18a30b5",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
-													"id": "4d830c84-5458-47b6-90ef-cc655f2fdcd1",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1558,14 +1592,17 @@
 									"response": []
 								}
 							],
-							"id": "5173e143-02cc-44af-99c6-0c7b89fa4043"
+							"id": "ee1c47f1-0bc6-4086-9a50-54bff082b6f0"
 						},
 						{
 							"name": "Client",
 							"item": [
 								{
 									"name": "Récupérer la liste des applications enregistrées",
-									"id": "e8f79bf7-bc33-40e6-8603-0837acd7a257",
+									"id": "11d5b21f-31bd-4278-8bd1-1dd0103698c2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1590,7 +1627,10 @@
 								},
 								{
 									"name": "Enregistrer une nouvelle application",
-									"id": "6b3ea63c-27c8-4ab4-93a5-55b42c5bf1ac",
+									"id": "52b3cbd7-2618-47b3-ab6a-eda3efc560d4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1624,7 +1664,10 @@
 								},
 								{
 									"name": "Récupérer une seule application",
-									"id": "c28c59c0-f856-4103-a20d-11ba984a7a76",
+									"id": "2f01e35e-a7b4-4fd1-9692-00d9010df4d5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1646,7 +1689,6 @@
 											],
 											"variable": [
 												{
-													"id": "06c752a1-4e89-4ef5-9d94-be4a1f9dd566",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1658,7 +1700,10 @@
 								},
 								{
 									"name": "Modifier une application",
-									"id": "668eb401-7ee4-4810-ad4b-bca2878755c6",
+									"id": "fdf41693-e7de-4cab-9720-2d6110335846",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -1689,7 +1734,6 @@
 											],
 											"variable": [
 												{
-													"id": "fcd83db4-22af-4aac-9b8c-7ba02ecad9df",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1701,7 +1745,10 @@
 								},
 								{
 									"name": "Supprimer une application",
-									"id": "f5c0a6d5-171f-4d00-806a-6e93d339709a",
+									"id": "437cda34-9d59-4a7c-9730-79dddb39faca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "DELETE",
 										"header": [
@@ -1723,7 +1770,6 @@
 											],
 											"variable": [
 												{
-													"id": "372eff32-ed5e-4c02-b0fc-bdb3ea847125",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1735,7 +1781,10 @@
 								},
 								{
 									"name": "Récupérer une seule application Copy",
-									"id": "a128d010-7197-4e9e-9627-1797f2895927",
+									"id": "fe04f265-963b-40de-b6ac-92e2927156bb",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1767,7 +1816,6 @@
 											],
 											"variable": [
 												{
-													"id": "df194bd8-0c2c-463e-b9c4-d5672693136d",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1778,7 +1826,7 @@
 									"response": []
 								}
 							],
-							"id": "b00327ef-f4dd-4ad5-a400-fcef0213f03a",
+							"id": "44fa761a-6b83-4dcb-9f14-0500d09239ea",
 							"auth": {
 								"type": "bearer",
 								"bearer": [
@@ -1796,7 +1844,8 @@
 										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"id": "ea5d727a-0006-4771-92bf-c107e1e20d97"
 									}
 								},
 								{
@@ -1805,7 +1854,8 @@
 										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"id": "53a95106-4071-4022-9f35-585452c2c578"
 									}
 								}
 							]
@@ -1827,11 +1877,15 @@
 													"    pm.environment.set(\"gateway_access_token_expire\", expired_at + pm.response.json().expires_in);",
 													"}"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"id": "75f08542-25ac-47dd-a8a5-9ab8b134e655"
 											}
 										}
 									],
-									"id": "35fea3f8-1d68-4369-b9ca-61c227dba3f9",
+									"id": "078d5029-91ed-4999-992f-a6379cd36777",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1905,11 +1959,15 @@
 													"pm.environment.set(\"gateway_access_token_expire\", 0);",
 													"console.log('Revocation du token et mise à 0 de l\\'expiration')"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"id": "a3b2acbc-8768-4108-ad31-234234fe05de"
 											}
 										}
 									],
-									"id": "69ade79c-7668-438c-8882-a14ab1b7601f",
+									"id": "b580f75c-4a2a-42e8-bd46-0f51600e3adb",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1961,14 +2019,17 @@
 									"response": []
 								}
 							],
-							"id": "68366f96-91e5-4e4b-8506-ccf9d3486e36"
+							"id": "11ae9022-ffc4-424b-85b9-f9ff458c3823"
 						},
 						{
 							"name": "User",
 							"item": [
 								{
 									"name": "Récupérer la liste des Utilisateurs",
-									"id": "a04dc4a5-96f5-45bb-9f9a-9b0f8e77c5b3",
+									"id": "a0c86841-09d4-4aa4-8acc-2aaddef97c0f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2002,7 +2063,10 @@
 								},
 								{
 									"name": "Récupérer la liste des Entités",
-									"id": "1bf24416-0740-4a85-85b3-07a656fdd876",
+									"id": "7c385b4c-46b1-4d57-8682-c60c5fc11928",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2036,7 +2100,10 @@
 								},
 								{
 									"name": "Récupérer la liste des répertoires d'entité",
-									"id": "ff00441f-b49a-4283-9779-edfa40bfd8b8",
+									"id": "02ac4c18-ae91-4715-871c-29ed3eca1856",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2070,7 +2137,10 @@
 								},
 								{
 									"name": "Récupérer un Utilisateur",
-									"id": "a77736aa-0137-45f7-8f51-0bfe6553c212",
+									"id": "f93de6e7-79c4-4c73-a157-eab1d52606a3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2101,7 +2171,6 @@
 											],
 											"variable": [
 												{
-													"id": "ddd6bd35-8d8c-42c3-9a71-6be536d49d72",
 													"key": "id",
 													"value": "3",
 													"description": "Identifiant de l'utilisateur"
@@ -2113,7 +2182,10 @@
 								},
 								{
 									"name": "Récupérer une entité",
-									"id": "99e4923f-b77e-4903-8e64-6c1f2467c361",
+									"id": "6d2e9d11-db70-4d02-8e84-e8364571fb94",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2144,7 +2216,6 @@
 											],
 											"variable": [
 												{
-													"id": "560de1a0-a01e-40c9-b980-4ab09f175fb8",
 													"key": "id",
 													"value": "1",
 													"description": "Identifiant de l'entité"
@@ -2156,7 +2227,10 @@
 								},
 								{
 									"name": "Récupérer un groupe",
-									"id": "800bd4e8-2e58-4ae0-bb75-da63a994aed1",
+									"id": "eaa64f9a-befb-4cc3-8fd1-9ff5f9809a2c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2187,7 +2261,6 @@
 											],
 											"variable": [
 												{
-													"id": "63c5e2e8-3e78-48e5-99a4-bc26692272d7",
 													"key": "id",
 													"value": "2",
 													"description": "Identifiant du groupe"
@@ -2199,7 +2272,10 @@
 								},
 								{
 									"name": "Récupérer la liste des groupes",
-									"id": "a83f46bf-a130-4d43-98a5-175bf0a09d0a",
+									"id": "c2305980-b24a-43d9-8b04-d0810debdf75",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2234,7 +2310,10 @@
 								},
 								{
 									"name": "Récupérer un type de groupe",
-									"id": "de99dbf0-ed89-4bf9-95ff-e08950045877",
+									"id": "6a237b74-617b-43d7-a243-465ed72d1f01",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2265,7 +2344,6 @@
 											],
 											"variable": [
 												{
-													"id": "145a887f-05a1-4945-bcb1-67d507e8ff81",
 													"key": "id",
 													"value": "1003",
 													"description": "Identifiant du type de groupe"
@@ -2277,7 +2355,10 @@
 								},
 								{
 									"name": "Récupérer un la liste des types de groupe",
-									"id": "8c5578d5-9c4a-4e3b-a61d-24b9a4769842",
+									"id": "e74db4ce-97c8-4170-beee-b4344ddfb4d5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2311,7 +2392,10 @@
 								},
 								{
 									"name": "Récupérer un répertoire d'entité",
-									"id": "e5bc269f-7135-454b-9f98-051addb27855",
+									"id": "6570849e-99f4-4301-8a91-62ea4a8e21e0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2342,7 +2426,6 @@
 											],
 											"variable": [
 												{
-													"id": "8b4ee6c7-a909-4079-9012-fce88a036375",
 													"key": "id",
 													"value": "1",
 													"description": "Identifiant du repertoire"
@@ -2353,13 +2436,13 @@
 									"response": []
 								}
 							],
-							"id": "d32e54e6-d4dc-438d-8a55-0358368bce64"
+							"id": "c0951ece-1195-4e4b-b8c6-b41fde54a65c"
 						}
 					],
-					"id": "daa2b60e-5bbd-4821-9c2d-c3f05a92f37d"
+					"id": "0922d607-5948-4106-ab2c-960c0549ff09"
 				}
 			],
-			"id": "699d9d7e-4014-4943-b749-c187addfb999",
+			"id": "d55e5661-d459-4915-949a-3ca8474f0eae",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
@@ -2413,7 +2496,8 @@
 							"        }",
 							"    });",
 							"}"
-						]
+						],
+						"id": "943b7c5b-ceae-426c-ba66-880ae2cc1836"
 					}
 				},
 				{
@@ -2422,7 +2506,8 @@
 						"type": "text/javascript",
 						"exec": [
 							""
-						]
+						],
+						"id": "ca37a418-4760-48b3-91f6-07d6d57f70f9"
 					}
 				}
 			]
@@ -2435,7 +2520,10 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des BlueApps",
-							"id": "378282fa-ee5b-4a00-a2f6-623fcf3bc21f",
+							"id": "d65323b3-9d14-4c95-ab36-7a82d78e44d3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2464,7 +2552,10 @@
 						},
 						{
 							"name": "Récupérer une BlueApp",
-							"id": "d22b7f27-5645-4338-9355-ab2c5e705c9c",
+							"id": "771db99c-e33b-4fa8-b60d-c975f58565a5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2490,7 +2581,6 @@
 									],
 									"variable": [
 										{
-											"id": "684474b0-0282-47dc-b5c8-809ed257efe8",
 											"key": "id",
 											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 											"description": "Identifiant de la BlueApp"
@@ -2502,7 +2592,10 @@
 						},
 						{
 							"name": "Récupérer la structure d'une BlueApp",
-							"id": "5389a981-aa38-492a-b6f0-9b075fd90136",
+							"id": "b2758efa-1815-44e6-9215-28c334718b05",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2529,7 +2622,6 @@
 									],
 									"variable": [
 										{
-											"id": "32f32e02-8219-44c0-b519-800968275e33",
 											"key": "id",
 											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 											"description": "Identifiant de la BlueApp"
@@ -2541,7 +2633,10 @@
 						},
 						{
 							"name": "Récupérer la liste des répertoires blueapp",
-							"id": "9b20c987-c0dc-42d1-8e88-d3088bceb6f9",
+							"id": "2e6dbe19-391a-4de5-8645-2fe622196bde",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2570,7 +2665,10 @@
 						},
 						{
 							"name": "Récupérer un répertoire",
-							"id": "89b28bd8-4c41-4ba7-8ebc-3122c9d7d4d8",
+							"id": "89b62951-bbb7-45c5-8104-39d3da3620dd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2596,7 +2694,6 @@
 									],
 									"variable": [
 										{
-											"id": "be94fd74-959f-474b-b0cf-015eb45455d1",
 											"key": "id",
 											"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
 											"description": "Identifiant du répertoire"
@@ -2608,7 +2705,10 @@
 						},
 						{
 							"name": "Récupérer le thème BlueApp de l'entité",
-							"id": "3e9c6156-797d-47d4-b5c3-b23c09285183",
+							"id": "3d98b9f3-ffcd-450f-abec-6fc3c5aa1d7e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2640,7 +2740,6 @@
 									],
 									"variable": [
 										{
-											"id": "235d7d51-f7fb-447b-aa79-8077955b49bf",
 											"key": "entityId",
 											"value": "1"
 										}
@@ -2648,16 +2747,51 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Récupérer la liste des BlueApps test",
+							"id": "b994e264-cabd-4b6e-b14f-d5cecc6942e9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps"
+									]
+								}
+							},
+							"response": []
 						}
 					],
-					"id": "db7377ba-ccbe-4188-b442-bf9f7a7e2468"
+					"id": "8d0904bb-dd0e-4df2-9998-f4bfc6129eaa"
 				},
 				{
 					"name": "Entry",
 					"item": [
 						{
 							"name": "Créer une nouvelle saisie",
-							"id": "df59890f-f98f-439e-b2c7-73ad7dd6ea1d",
+							"id": "b8fca532-f075-4da0-b92a-08bca8dd5b9e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2693,7 +2827,6 @@
 									],
 									"variable": [
 										{
-											"id": "1fbd7341-c338-4061-916d-fd96e62f9dd0",
 											"key": "blueAppId",
 											"value": null,
 											"description": "Identifiant de la BlueApp"
@@ -2705,7 +2838,10 @@
 						},
 						{
 							"name": "Récupération d'une saisie",
-							"id": "f46f5a89-c28e-48e1-ad9c-59719a738ec5",
+							"id": "474e7c68-a052-4d14-b4a1-2d1cfd5fd330",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2733,13 +2869,11 @@
 									],
 									"variable": [
 										{
-											"id": "711de601-afd9-43b3-bfda-51a3bbcdaf98",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
-											"id": "19dd1a0c-c894-415f-a361-beeabcc5a530",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2751,7 +2885,10 @@
 						},
 						{
 							"name": "Mettre à jour une saisie",
-							"id": "b41dc772-fedc-4403-8a2a-fa19a1a2f90c",
+							"id": "44c7a176-6ef9-40f1-b69c-7d3a97426bdc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -2788,13 +2925,11 @@
 									],
 									"variable": [
 										{
-											"id": "e0ac4029-cfda-401f-918d-14273d590579",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
-											"id": "4668ab5f-3c21-469a-a51e-27f8a5bf547a",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2806,7 +2941,10 @@
 						},
 						{
 							"name": "Créer une nouvelle version d'une saisie",
-							"id": "110c5e44-3b60-4b3a-927b-48345fdf1efc",
+							"id": "b61c7f71-08d1-4bd1-a7cf-a1404d44502e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2843,13 +2981,11 @@
 									],
 									"variable": [
 										{
-											"id": "442f1ec0-ffa4-4103-965a-23ab61659a33",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
-											"id": "6ee4d346-bcc6-440f-badf-69fcb12a43c7",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2860,14 +2996,17 @@
 							"response": []
 						}
 					],
-					"id": "d126a4fc-5236-4d13-a2ae-e1c7415d5605"
+					"id": "16d664e6-6120-490a-9101-4e01e9b1491c"
 				},
 				{
 					"name": "File",
 					"item": [
 						{
 							"name": "Sauvegarder un fichier",
-							"id": "c4c0b5e8-aa7c-4927-8572-4c049a1451fb",
+							"id": "1820945f-21e9-40eb-9bb2-563ed01470d6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2905,17 +3044,20 @@
 							"response": []
 						}
 					],
-					"id": "a7790e86-09a6-4f28-8ec7-c8db90aa6c13"
+					"id": "c08ee4a8-2f1f-44aa-92c3-72dabb090b86"
 				}
 			],
-			"id": "1c736d07-cc8e-4571-901d-709805120552"
+			"id": "be20aa48-5e60-41d8-82ea-5cd760235599"
 		},
 		{
 			"name": "Client-Manager",
 			"item": [
 				{
 					"name": "GetClientFromGatewayService",
-					"id": "1115a798-1721-4c2d-adc3-8fed0ef41c5d",
+					"id": "3209e2c6-4aaf-41c3-bfee-e1c2c8f075e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2930,11 +3072,7 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "{\n    getClientFromGatewayService(name: \"{{X-CLIENT}}\") {\n    ... on GetClientFromGatewayServiceResultSuccess {\n      type\n      message\n      data {\n        databaseName\n        databaseServer\n      }\n    }\n    ... on GetClientFromGatewayServiceResultError {\n      type\n      message\n    }\n  }\n}",
-								"variables": ""
-							}
+							"mode": "graphql"
 						},
 						"url": {
 							"raw": "{{client_manager_baseURL}}",
@@ -2946,7 +3084,7 @@
 					"response": []
 				}
 			],
-			"id": "f9b190b7-99d8-4887-a9aa-4b7bc994e568"
+			"id": "6aac73d1-fe46-4944-972e-8c82da3482b4"
 		},
 		{
 			"name": "User",
@@ -2956,7 +3094,10 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des utilisateurs",
-							"id": "f7ea0fe1-9ced-4c30-beb6-94537101bb91",
+							"id": "a046244c-afa2-4580-8c0e-7d68595514a7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2985,7 +3126,10 @@
 						},
 						{
 							"name": "Récupérer un utilisateur",
-							"id": "224f3e88-4452-48a8-bd4d-267040e4ffc9",
+							"id": "795f68ac-bcbf-4061-988d-a18ae6e53fa9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3011,7 +3155,6 @@
 									],
 									"variable": [
 										{
-											"id": "3a23ed8c-0936-4359-b7fb-54766de49ece",
 											"key": "id",
 											"value": "3"
 										}
@@ -3021,14 +3164,17 @@
 							"response": []
 						}
 					],
-					"id": "b842028a-6524-4bf1-a0ff-99bc3b21e26d"
+					"id": "76a2abb7-b789-4279-8e2b-d03f70cac7cd"
 				},
 				{
 					"name": "Entity",
 					"item": [
 						{
 							"name": "Récupérer une entité",
-							"id": "49fe6f3e-810a-48f0-ae2d-0f500c180b81",
+							"id": "68f6acb8-32c5-4ec2-bef6-3ea88f3f8904",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3054,7 +3200,6 @@
 									],
 									"variable": [
 										{
-											"id": "88adcaae-4e16-4de8-badf-52a5db3adf87",
 											"key": "id",
 											"value": "1"
 										}
@@ -3065,7 +3210,10 @@
 						},
 						{
 							"name": "Récupérer un repertoire d'entité",
-							"id": "2a4bd12f-be52-4a9a-90ed-26c4a1f1d4c8",
+							"id": "2b14fb4d-155d-4b2a-a47f-f8015bbcc59d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3091,7 +3239,6 @@
 									],
 									"variable": [
 										{
-											"id": "155bdaef-8ee0-4150-93c7-66be3ee36eea",
 											"key": "id",
 											"value": "1"
 										}
@@ -3102,7 +3249,10 @@
 						},
 						{
 							"name": "Récupérer la liste des entités",
-							"id": "c1ac53ad-885c-4389-b6ee-71afc4b6aa3a",
+							"id": "6384b33e-73f5-4f32-bea0-ef9d1df84218",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3131,7 +3281,10 @@
 						},
 						{
 							"name": "Récupérer la liste des repertoire d'entités",
-							"id": "8aaf4758-6abb-4c4a-9953-a64179d68b10",
+							"id": "ba404259-415c-4d95-be8b-1a8210e97611",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3159,14 +3312,17 @@
 							"response": []
 						}
 					],
-					"id": "12d03469-bbf8-4bef-85b7-8a3803aaf570"
+					"id": "2c3fcdec-c8b7-429e-abb0-1f05e5ccc2b5"
 				},
 				{
 					"name": "Group",
 					"item": [
 						{
 							"name": "Récupérer un groupe",
-							"id": "6f7a2a15-4510-4949-8366-d77993bb6a05",
+							"id": "d52ddbdd-1ae1-4891-89ee-871d61948d8d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3192,7 +3348,6 @@
 									],
 									"variable": [
 										{
-											"id": "51ab484c-dc70-47dc-80ae-381a866412de",
 											"key": "id",
 											"value": "1"
 										}
@@ -3203,7 +3358,10 @@
 						},
 						{
 							"name": "Récupérer un type de groupe",
-							"id": "9565eb70-805f-47ea-8395-734bac41baa3",
+							"id": "a8c3a907-41cc-469a-b999-8ff57d3e5a5b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3236,7 +3394,6 @@
 									],
 									"variable": [
 										{
-											"id": "c4e84587-ea20-4902-8f55-e80aae54693d",
 											"key": "id",
 											"value": "1003"
 										}
@@ -3247,7 +3404,10 @@
 						},
 						{
 							"name": "Récupérer la liste des types de groupe",
-							"id": "31bc9b27-6979-4c5c-afd3-50094584aed3",
+							"id": "4033b57d-4e5b-408f-b368-338caece97ad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3283,7 +3443,10 @@
 						},
 						{
 							"name": "Récupérer la liste des groupes",
-							"id": "a8f73e6a-4f1f-49cb-8162-c85417f629c8",
+							"id": "6973a067-10d9-4fb8-8e6f-9e1167b1f90b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3328,10 +3491,10 @@
 							"response": []
 						}
 					],
-					"id": "0c8b9fbb-84a2-4790-9a3f-a7290851626e"
+					"id": "b9e2bf1c-547e-4ac5-8e7c-fcdd99f1844c"
 				}
 			],
-			"id": "6341e9cf-3d24-4f82-8a58-f46e790b6f78"
+			"id": "6c0d03b8-b1f6-4f2c-b920-a04f8283bb2e"
 		}
 	],
 	"event": [
@@ -3341,7 +3504,8 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "ab0c3fe4-335c-4286-97f1-044c2aa9b844"
 			}
 		},
 		{
@@ -3350,7 +3514,8 @@
 				"type": "text/javascript",
 				"exec": [
 					""
-				]
+				],
+				"id": "3a15f1c4-0a90-48e2-8fd4-f8c57ce59436"
 			}
 		}
 	],
