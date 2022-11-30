@@ -6,47 +6,2148 @@
 	},
 	"item": [
 		{
-			"name": "BlueApps",
+			"name": "Auth",
 			"item": [
 				{
-					"name": "Récupérer l'ensemble des BlueApps",
-					"id": "7c660464-b4ec-42b6-b2f6-da17a504afb6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Client",
+					"item": [
+						{
+							"name": "Récupérer la liste des applications enregistrées",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{auth_baseURL}}/clients",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Enregistrer une nouvelle application",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_name\": \"string\",\n  \"client_description\": \"string\",\n  \"url\": \"string\",\n  \"scope\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/clients",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer une seule application",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{auth_baseURL}}/clients/:client_id",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients",
+										":client_id"
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier une application",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_name\": \"test rse\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/clients/:client_id",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients",
+										":client_id"
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+											"description": "Identifiant du client"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Supprimer une application",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{auth_baseURL}}/clients/:client_id",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients",
+										":client_id"
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+											"description": "Identifiant du client"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Générer une nouvelle clé secrête",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.json().client_secret) {",
+											"    pm.environment.set('client_secret', pm.response.json().client_secret)",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/clients/:client_id/newSecret",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"clients",
+										":client_id",
+										"newSecret"
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+											"description": "Identifiant du client"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Token",
+					"item": [
+						{
+							"name": "Récupération Introspect",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.json().active === true) {",
+											"    let response = pm.response.json();",
+											"    console.log(btoa(JSON.stringify(response)))",
+											"    pm.environment.set(\"X-USER\", btoa(JSON.stringify(response)));",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"description": "Propriétés du serveurs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "token",
+											"value": "{{auth_access_token}}",
+											"description": "Jeton d'acces",
+											"type": "text"
+										},
+										{
+											"key": "token_type_hint",
+											"value": "access_token",
+											"description": "Type de jeton",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/introspect",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"introspect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupération Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.json().access_token) {",
+											"    pm.environment.set(\"auth_access_token\", pm.response.json().access_token);",
+											"    let expired_at = Date.now();",
+											"",
+											"    pm.environment.set(\"auth_access_token_expire\", expired_at + pm.response.json().expires_in);",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}",
+											"description": "Identifiant de l'application Oauth",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{client_secret}}",
+											"description": "Clé secrête de l'application Oauth",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"description": "Login de l'utilisateur",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "Mot de passe de l'utilisateur",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"description": "Methode d'acquisition du token",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "blueapp.read refresh_token",
+											"description": "Scope du token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/token",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Révocation Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"auth_access_token_expire\", 0);",
+											"console.log('Revocation du token et mise à 0 de l\\'expiration')"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}",
+											"description": "Identifiant de l'application Oauth",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{client_secret}}",
+											"description": "Clé secrête de l'application Oauth",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "{{auth_access_token}}",
+											"description": "Jeton à désactiver",
+											"type": "text"
+										},
+										{
+											"key": "token_type_hint",
+											"value": "access_token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{auth_baseURL}}/revoke",
+									"host": [
+										"{{auth_baseURL}}"
+									],
+									"path": [
+										"revoke"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"if (Date.now() >= pm.environment.get('auth_access_token_expire')) {",
+							"    console.log('Refresh automatique du token');",
+							"    const postRequest = {",
+							"    url: `${pm.environment.get('auth_baseURL')}/token`,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Content-Type': 'application/x-www-form-urlencoded',",
+							"        'X-TENANT': pm.environment.get('X-TENANT')",
+							"    },",
+							"    body: {",
+							"        mode: 'urlencoded',",
+							"        urlencoded : [",
+							"            {key : 'client_id', value : pm.environment.get('client_id')},",
+							"            {key : 'client_secret', value : pm.environment.get('client_secret')},",
+							"            {key : 'username', value : pm.environment.get('username')},",
+							"            {key : 'password', value : pm.environment.get('password')},",
+							"            {key : 'grant_type', value : 'password'},",
+							"            {key : 'scope', value : pm.environment.get('gateway_token_scope')},",
+							"        ],",
+							"    }",
+							"    };",
+							"    pm.sendRequest(postRequest, (error, response) => {",
+							"        if (error) {",
+							"            console.log('Échec lors du refresh du token')",
+							"            console.log(error);",
+							"            return;",
+							"        }",
+							"        if (response.json().access_token) {",
+							"            pm.environment.set(\"auth_access_token\", response.json().access_token);",
+							"            let expired_at = Date.now();",
+							"            pm.environment.set(\"auth_access_token_expire\", expired_at + (response.json().expires_in * 1000));",
+							"            console.log('Refresh du token effectué avec succés');",
+							"        }",
+							"    });",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "GraphQL",
+					"item": [
+						{
+							"name": "BlueApp",
+							"item": [
+								{
+									"name": "Récupérer la liste des BlueApps",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query ($page : Int, $itemPerPage : Int) {\n    getBlueApps(page : $page, itemsPerPage : $itemPerPage) {\n        collection {\n            id\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            description\n            version\n            status\n            createdAt\n            updatedAt\n            managers {\n                entities {\n                    id\n                    isManager\n                }\n                users {\n                    id\n                    firstname\n                    lastname\n                }\n            }\n            directory {\n                id\n                entityId\n                name {\n                    language\n                    text\n                    translations {\n                        language\n                        text\n                    }\n                }\n                createdAt\n                updatedAt\n            }\n        }\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer une BlueApp",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query ($id: String!) {\n    getBlueApp(id : $id) {\n        id\n        name {\n        language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        description\n        version\n        status\n        createdAt\n        updatedAt\n        managers {\n            entities {\n                id\n                isManager\n            }\n            users {\n                id\n                firstname\n                lastname\n            }\n        }\n        directory {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
+												"variables": "{\n    \"id\" : \"01G2W6C9SGTR50GAP5C8WMERVR\"\n}"
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la structure d'une Blueapp",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query($id: String!) {\n    getBlueAppStructure(id: $id) {\n        id\n\n    }\n}",
+												"variables": "{\n    \"id\": \"2\"\n}"
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la liste des repertoires",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\n    getBlueAppDirectories{\n        collection {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un répertoire",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query($id : String!) {\n    getBlueAppDirectory(id : $id) {\n        id\n        entityId\n        name {\n            language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        createdAt\n        updatedAt\n    }\n}",
+												"variables": "{\n    \"id\" : \"01FV1X0A8SXM9S41VXCJP4EVTG\"\n}"
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer le thème BlueApp",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query($entityId : String!) {\n    getBlueAppTheme(entityId: $entityId){\n        entityId\n        header\n        footer\n    }\n}",
+												"variables": "{\n    \"entityId\" : \"1\"\n}"
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "BlueAppEntry",
+							"item": [
+								{
+									"name": "Récupérer une Saisie",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query ($id: String!, $blueAppId : String!) {\n   getBlueAppEntry(id: $id, blueAppId : $blueAppId) {\n       id\n       entityId\n       author\n       number\n       updatedBy\n       createdAt\n       updatedAt\n   }\n}",
+												"variables": "{\n    \"blueAppId\" : \"01FV1X0A9RABJN1NE1BBZWR83Y\",\n    \"id\" : \"1\" \n}"
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/graphql",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Rest",
+					"item": [
+						{
+							"name": "BlueApp",
+							"item": [
+								{
+									"name": "Récupérer la liste des BlueApps",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer une BlueApp",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
+													"description": "Identifiant de la BlueApp"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la structure d'une BlueApp",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:id/structure",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":id",
+												"structure"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
+													"description": "Identifiant de la BlueApp"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la liste des répertoires blueapp",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueappsDirectories",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueappsDirectories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un répertoire",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueappsDirectories/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueappsDirectories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
+													"description": "Identifiant du répertoire"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer le theme des BlueApp",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueappsTheme/:entityId",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueappsTheme",
+												":entityId"
+											],
+											"variable": [
+												{
+													"key": "entityId",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "BlueAppEntry",
+							"item": [
+								{
+									"name": "Créer une nouvelle saisie",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"author\": \"string\",\n  \"entityId\": \"string\",\n  \"createdAt\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:blueAppId/entries",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":blueAppId",
+												"entries"
+											],
+											"variable": [
+												{
+													"key": "blueAppId",
+													"value": null,
+													"description": "Identifiant de la BlueApp"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupération d'une saisie",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:blueAppId/entries/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":blueAppId",
+												"entries",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "blueAppId",
+													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+													"description": "Identifiant de la BlueApp"
+												},
+												{
+													"key": "id",
+													"value": null,
+													"description": "Identifiant de la saisie"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mettre à jour une saisie",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"updatedAt\": \"string\",\n  \"updatedBy\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:blueAppId/entries/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":blueAppId",
+												"entries",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "blueAppId",
+													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+													"description": "Identifiant de la BlueApp"
+												},
+												{
+													"key": "id",
+													"value": null,
+													"description": "Identifiant de la saisie"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Créer une nouvelle version d'une saisie",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"updatedAt\": \"string\",\n  \"updatedBy\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/blueapps/:blueAppId/entries/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"blueapps",
+												":blueAppId",
+												"entries",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "blueAppId",
+													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+													"description": "Identifiant de la BlueApp"
+												},
+												{
+													"key": "id",
+													"value": null,
+													"description": "Identifiant de la saisie"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Client",
+							"item": [
+								{
+									"name": "Récupérer la liste des applications enregistrées",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Enregistrer une nouvelle application",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client_name\": \"string\",\n  \"client_description\": \"string\",\n  \"url\": \"string\",\n  \"scope\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer une seule application",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients/:client_id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients",
+												":client_id"
+											],
+											"variable": [
+												{
+													"key": "client_id",
+													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+													"description": "Identifiant du client"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Modifier une application",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client_name\": \"test rse\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients/:client_id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients",
+												":client_id"
+											],
+											"variable": [
+												{
+													"key": "client_id",
+													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+													"description": "Identifiant du client"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Supprimer une application",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients/:client_id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients",
+												":client_id"
+											],
+											"variable": [
+												{
+													"key": "client_id",
+													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+													"description": "Identifiant du client"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer une seule application Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/clients/:client_id/newSecret",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"clients",
+												":client_id",
+												"newSecret"
+											],
+											"variable": [
+												{
+													"key": "client_id",
+													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
+													"description": "Identifiant du client"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{gateway_access_token}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Token",
+							"item": [
+								{
+									"name": "Récupération Token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"if (pm.response.json().access_token) {",
+													"    pm.environment.set(\"gateway_access_token\", pm.response.json().access_token);",
+													"    let expired_at = Date.now();",
+													"",
+													"    pm.environment.set(\"gateway_access_token_expire\", expired_at + pm.response.json().expires_in);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "client_id",
+													"value": "{{client_id}}",
+													"description": "Identifiant de l'application Oauth",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{client_secret}}",
+													"description": "Clé secrête de l'application Oauth",
+													"type": "text"
+												},
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"description": "Login de l'utilisateur",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "{{password}}",
+													"description": "Mot de passe de l'utilisateur",
+													"type": "text"
+												},
+												{
+													"key": "grant_type",
+													"value": "password",
+													"description": "Methode d'acquisition du token",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "blueapp.read refresh_token",
+													"description": "Scope du token",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/token",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"token"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Révocation Token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"gateway_access_token_expire\", 0);",
+													"console.log('Revocation du token et mise à 0 de l\\'expiration')"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "client_id",
+													"value": "{{client_id}}",
+													"description": "Identifiant de l'application Oauth",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{client_secret}}",
+													"description": "Clé secrête de l'application Oauth",
+													"type": "text"
+												},
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"description": "Jeton à désactiver",
+													"type": "text"
+												},
+												{
+													"key": "token_type_hint",
+													"value": "access_token",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{gateway_baseURL}}/oauth/revoke",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"oauth",
+												"revoke"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{gateway_access_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"if (Date.now() >= pm.environment.get('gateway_access_token_expire')) {",
+							"    console.log('Refresh automatique du token');",
+							"    const postRequest = {",
+							"    url: `${pm.environment.get('gateway_baseURL')}/oauth/token`,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Content-Type': 'application/x-www-form-urlencoded',",
+							"        'X-CLIENT': pm.environment.get('X-CLIENT')",
+							"    },",
+							"    body: {",
+							"        mode: 'urlencoded',",
+							"        urlencoded : [",
+							"            {key : 'client_id', value : pm.environment.get('client_id')},",
+							"            {key : 'client_secret', value : pm.environment.get('client_secret')},",
+							"            {key : 'username', value : pm.environment.get('username')},",
+							"            {key : 'password', value : pm.environment.get('password')},",
+							"            {key : 'grant_type', value : 'password'},",
+							"            {key : 'scope', value : pm.environment.get('gateway_token_scope')},",
+							"        ],",
+							"    }",
+							"    };",
+							"    pm.sendRequest(postRequest, (error, response) => {",
+							"        console.log(error, response)",
+							"        if (error) {",
+							"            console.log('Échec lors du refresh du token')",
+							"            console.log(error);",
+							"            return;",
+							"        }",
+							"        if (response && response.json() && response.json().access_token) {",
+							"            pm.environment.set(\"gateway_access_token\", response.json().access_token);",
+							"            let expired_at = Date.now();",
+							"",
+							"            pm.environment.set(\"gateway_access_token_expire\", expired_at + (response.json().expires_in * 1000));",
+							"            console.log('Refresh du token effectué avec succés');",
+							"        }",
+							"    });",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "BlueApp",
+			"item": [
+				{
+					"name": "BlueApp",
+					"item": [
+						{
+							"name": "Récupérer la liste des BlueApps",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer une BlueApp",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:id",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
+											"description": "Identifiant de la BlueApp"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la structure d'une BlueApp",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:id/structure",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":id",
+										"structure"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
+											"description": "Identifiant de la BlueApp"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la liste des répertoires blueapp",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueappsDirectories",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueappsDirectories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un répertoire",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueappsDirectories/:id",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueappsDirectories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
+											"description": "Identifiant du répertoire"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer le thème BlueApp de l'entité",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									},
+									{
+										"key": "XDEBUG_MODE",
+										"value": "VSCODE",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueappsTheme/:entityId",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueappsTheme",
+										":entityId"
+									],
+									"variable": [
+										{
+											"key": "entityId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Entry",
+					"item": [
+						{
+							"name": "Créer une nouvelle saisie",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"author\": \"string\",\n  \"entityId\": \"string\",\n  \"createdAt\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:blueAppId/entries",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":blueAppId",
+										"entries"
+									],
+									"variable": [
+										{
+											"key": "blueAppId",
+											"value": null,
+											"description": "Identifiant de la BlueApp"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupération d'une saisie",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:blueAppId/entries/:id",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":blueAppId",
+										"entries",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "blueAppId",
+											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+											"description": "Identifiant de la BlueApp"
+										},
+										{
+											"key": "id",
+											"value": null,
+											"description": "Identifiant de la saisie"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Mettre à jour une saisie",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"updatedAt\": \"string\",\n  \"updatedBy\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:blueAppId/entries/:id",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":blueAppId",
+										"entries",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "blueAppId",
+											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+											"description": "Identifiant de la BlueApp"
+										},
+										{
+											"key": "id",
+											"value": null,
+											"description": "Identifiant de la saisie"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Créer une nouvelle version d'une saisie",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"updatedAt\": \"string\",\n  \"updatedBy\": \"string\",\n  \"fields\": [\n    {\n      \"fieldId\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{blueapp_baseURL}}/blueapps/:blueAppId/entries/:id",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"blueapps",
+										":blueAppId",
+										"entries",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "blueAppId",
+											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
+											"description": "Identifiant de la BlueApp"
+										},
+										{
+											"key": "id",
+											"value": null,
+											"description": "Identifiant de la saisie"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "File",
+					"item": [
+						{
+							"name": "Sauvegarder un fichier",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/romain/Téléchargements/yams_feuille_1.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{blueapp_baseURL}}/files",
+									"host": [
+										"{{blueapp_baseURL}}"
+									],
+									"path": [
+										"files"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client-Manager",
+			"item": [
+				{
+					"name": "GetClientFromGatewayService",
 					"request": {
-						"method": "GET",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{client_manager_gateway_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "{\n    getBlueApps {\n        collection {\n            id\n        }\n    }\n}",
+								"query": "{\n    getClientFromGatewayService(name: \"{{X-CLIENT}}\") {\n    ... on GetClientFromGatewayServiceResultSuccess {\n      type\n      message\n      data {\n        databaseName\n        databaseServer\n      }\n    }\n    ... on GetClientFromGatewayServiceResultError {\n      type\n      message\n    }\n  }\n}",
 								"variables": ""
 							}
 						},
 						"url": {
-							"raw": "{{gateway_baseURL}}/graphql",
+							"raw": "{{client_manager_baseURL}}",
 							"host": [
-								"{{gateway_baseURL}}"
-							],
-							"path": [
-								"graphql"
+								"{{client_manager_baseURL}}"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"id": "5a6d7524-0228-46fa-8ac3-b0f756fb6de4"
+			]
 		}
 	],
-	"variable": [
+	"event": [
 		{
-			"id": "url",
-			"key": "url",
-			"value": "",
-			"type": "any",
-			"description": "URL for the request."
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
