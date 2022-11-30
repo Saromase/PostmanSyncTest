@@ -556,7 +556,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "query ($id: String!) {\n    getBlueApp(id : $id) {\n        id\n        name {\n        language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        description\n        version\n        status\n        createdAt\n        updatedAt\n        managers {\n            entities {\n                id\n                isManager\n            }\n            users {\n                id\n                firstname\n                lastname\n            }\n        }\n        directory {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
+												"query": "query ($id: String!) {\n    getBlueApp(id : $id) {\n        id\n        name {\n        language\n            text\n            translations {\n                language\n                text\n            }\n        }\n        directory {\n            id\n            entityId\n            name {\n                language\n                text\n                translations {\n                    language\n                    text\n                }\n            }\n            createdAt\n            updatedAt\n        }\n    }\n}",
 												"variables": "{\n    \"id\" : \"01G2W6C9SGTR50GAP5C8WMERVR\"\n}"
 											}
 										},
@@ -726,6 +726,326 @@
 										}
 									},
 									"response": []
+								}
+							]
+						},
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "User",
+									"item": [
+										{
+											"name": "Récupérer un utilisateur",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($id : String!) {\n    getUser(id : $id) {\n        id\n        login\n        firstName\n        lastName\n        initials\n        isAdmin\n        blocked\n        reformed\n        fax\n        mobil\n        phone\n        language\n        emails {\n            email\n            verify\n            main\n        }\n        entities\n    }\n}",
+														"variables": "{\n    \"id\" : \"3\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer la liste des utilisateurs",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query($entityId: String, $page: Int, $itemsPerPage: Int) {\n    getUsers(entityId: $entityId, page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            firstName\n            lastName\n            initials\n            isAdmin\n            login\n            phone\n            mobil\n            fax\n            reformed\n            blocked\n            emails {\n                email\n                main\n                verify\n            }\n            entities\n            mainEntity\n        }\n    }\n}",
+														"variables": "{\n    \"entityId\" : \"1\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Group",
+									"item": [
+										{
+											"name": "Récupérer un groupe",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($id : String!) {\n    getGroup(id : $id) {\n        id\n        label\n        code\n        entityId\n        groupType {\n            id\n            label\n        }\n    }\n}",
+														"variables": "{\n    \"id\" : \"2\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer un type de groupe",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($id : String!, $entityId : String) {\n    getGroupType(id : $id, entityId : $entityId) {\n        id\n        label\n        code\n        groups {\n            id\n            code\n            label\n            entityId\n        }\n    }\n}",
+														"variables": "{\n    \"id\" : \"1003\",\n    \"entityId\" : \"1\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer la liste des type de groupe",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($entityId : String) {\n    getGroupTypes(entityId : $entityId) {\n        collection {\n            id\n            label\n            code\n        }\n    }\n}",
+														"variables": "{\n    \"entityId\" : \"1\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer la liste des  groupes",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($entityId : String, $groupTypeId : String, $search : String, $page : Int, $itemsPerPage : Int) {\n    getGroups(entityId : $entityId, groupTypeId : $groupTypeId, search : $search, page : $page, itemsPerPage : $itemsPerPage ) {\n        collection {\n            id\n            label\n            code\n            groupType {\n                id\n                label\n            }\n            entityId\n        }\n    }\n}",
+														"variables": "{\n    \"entityId\" : \"1\",\n    \"groupTypeId\" : \"1013\",\n    \"itemsPerPage\" : 1\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Entity",
+									"item": [
+										{
+											"name": "Récupérer une entité",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($id : String!) {\n    getEntity(id : $id) {\n        id\n        label\n        main\n        address\n        beds\n        code\n        defaultLanguage\n        employees\n        finenessNumber\n        had\n        directory {\n            id\n            code\n            label\n        }\n    }\n}",
+														"variables": "{\n    \"id\" : \"2\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer un repertoire d'entité",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query ($id : String!) {\n    getEntityDirectory(id : $id) {\n        id\n        label\n        code\n    }\n}",
+														"variables": "{\n    \"id\" : \"1\"\n}"
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer la liste des entités",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query($page: Int, $itemsPerPage: Int) {\n    getEntities(page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            address\n            beds\n            code\n            defaultLanguage\n            employees\n            finenessNumber\n            had\n            label\n            main\n            directory {\n                id\n                label\n                code\n            }\n        }\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Récupérer la liste des répertoire d'entité",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-CLIENT",
+														"value": "{{X-CLIENT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "query($page: Int, $itemsPerPage: Int) {\n    getEntityDirectories(page: $page, itemsPerPage: $itemsPerPage) {\n        collection {\n            id\n            label\n            code\n        }\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "{{gateway_baseURL}}/graphql",
+													"host": [
+														"{{gateway_baseURL}}"
+													],
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"response": []
+										}
+									]
 								}
 							]
 						}
@@ -1565,6 +1885,382 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "Récupérer la liste des Utilisateurs",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/users",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la liste des Entités",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/entities",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"entities"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la liste des répertoires d'entité",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/entitiesDirectories",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"entitiesDirectories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un Utilisateur",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/users/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3",
+													"description": "Identifiant de l'utilisateur"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer une entité",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/entities/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"entities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "Identifiant de l'entité"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un groupe",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/groups/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"groups",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2",
+													"description": "Identifiant du groupe"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer la liste des groupes",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/groups/",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"groups",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un type de groupe",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/groupsTypes/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"groupsTypes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1003",
+													"description": "Identifiant du type de groupe"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un la liste des types de groupe",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/groupsTypes",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"groupsTypes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Récupérer un répertoire d'entité",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{gateway_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-CLIENT",
+												"value": "{{X-CLIENT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gateway_baseURL}}/entitiesDirectories/:id",
+											"host": [
+												"{{gateway_baseURL}}"
+											],
+											"path": [
+												"entitiesDirectories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "Identifiant du repertoire"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				}
@@ -1585,7 +2281,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"if (Date.now() >= pm.environment.get('gateway_access_token_expire')) {",
+							"if (pm.environment.get('GatewayRefreshAuto') === \"true\" && Date.now() >= pm.environment.get('gateway_access_token_expire')) {",
 							"    console.log('Refresh automatique du token');",
 							"    const postRequest = {",
 							"    url: `${pm.environment.get('gateway_baseURL')}/oauth/token`,",
@@ -2126,6 +2822,372 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Récupérer la liste des utilisateurs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/users",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un utilisateur",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/users/:id",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Entity",
+					"item": [
+						{
+							"name": "Récupérer une entité",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/entities/:id",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"entities",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un repertoire d'entité",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/entitiesDirectories/:id",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"entitiesDirectories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la liste des entités",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/entities",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"entities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la liste des repertoire d'entités",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/entitiesDirectories",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"entitiesDirectories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Group",
+					"item": [
+						{
+							"name": "Récupérer un groupe",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/groups/:id",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"groups",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un type de groupe",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/groupsTypes/:id",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"groupsTypes",
+										":id"
+									],
+									"query": [
+										{
+											"key": "entityId",
+											"value": "2",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1003"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la liste des types de groupe",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/groupsTypes",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"groupsTypes"
+									],
+									"query": [
+										{
+											"key": "entityId",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer la liste des groupes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-TENANT",
+										"value": "{{X-TENANT}}",
+										"type": "text"
+									},
+									{
+										"key": "X-USER",
+										"value": "{{X-USER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{user_baseURL}}/groups",
+									"host": [
+										"{{user_baseURL}}"
+									],
+									"path": [
+										"groups"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "rse",
+											"disabled": true
+										},
+										{
+											"key": "groupTypeId",
+											"value": "1003",
+											"disabled": true
+										},
+										{
+											"key": "entityId",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
