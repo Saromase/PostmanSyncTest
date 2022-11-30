@@ -11,8 +11,6 @@ files[] = {"id":"24701911-09b0694d-3c86-45c4-a3ad-da1de57620c9","path":"Gateway-
 
 [relations.apiDefinition]
 rootDirectory = postman/schemas
-files[] = {"path":"schema.json","metaData":{}}
 
 [relations.apiDefinition.metaData]
-type = graphql
-rootFiles[] = schema.json
+type = openapi:3
