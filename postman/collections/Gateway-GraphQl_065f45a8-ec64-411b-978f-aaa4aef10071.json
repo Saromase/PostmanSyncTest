@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "726c1501-adfd-4cee-bc24-51e6ac1adfb0",
-		"name": "Gateway-GraphQl",
+		"name": "Refonte",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -13,6 +13,7 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des applications enregistrées",
+							"id": "08a3b475-09de-4ce7-b808-f2f9cf3316ac",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -36,6 +37,7 @@
 						},
 						{
 							"name": "Enregistrer une nouvelle application",
+							"id": "80c3dfcc-0bbd-429b-aa05-025cc30bf72e",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -68,6 +70,7 @@
 						},
 						{
 							"name": "Récupérer une seule application",
+							"id": "c350d6d4-dc14-476c-93d5-aabdfddd7132",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -88,6 +91,7 @@
 									],
 									"variable": [
 										{
+											"id": "ee2806e5-e551-4f7b-8b56-c48ecbe3566b",
 											"key": "client_id",
 											"value": null
 										}
@@ -98,6 +102,7 @@
 						},
 						{
 							"name": "Modifier une application",
+							"id": "38f168b8-d6f3-4714-963b-cf355790c35c",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -127,6 +132,7 @@
 									],
 									"variable": [
 										{
+											"id": "9feaf416-a932-4beb-b331-4fc4f6841958",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -138,6 +144,7 @@
 						},
 						{
 							"name": "Supprimer une application",
+							"id": "06bebdfd-a326-4f0a-9f95-75bdf6dec00b",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -158,6 +165,7 @@
 									],
 									"variable": [
 										{
+											"id": "87739683-8c0d-4f0f-9a9e-e1da0808584f",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -182,6 +190,7 @@
 									}
 								}
 							],
+							"id": "77f39dc8-c6ff-45a3-b1ba-8b12356042f0",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -212,6 +221,7 @@
 									],
 									"variable": [
 										{
+											"id": "79118275-780b-4d3a-8ee2-2645e8ac3ef0",
 											"key": "client_id",
 											"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 											"description": "Identifiant du client"
@@ -222,6 +232,7 @@
 							"response": []
 						}
 					],
+					"id": "7c185295-8226-4853-9211-bf1f892ea561",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -263,6 +274,7 @@
 									}
 								}
 							],
+							"id": "c24eb699-4dc6-4b04-9cd2-c8ab2fba6cc5",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -320,6 +332,7 @@
 									}
 								}
 							],
+							"id": "e9729df9-c51b-400f-8360-2dc2097bf612",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -396,6 +409,7 @@
 									}
 								}
 							],
+							"id": "8b606d71-8cb2-4eef-98e4-9ce40eac8cf1",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -445,9 +459,11 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "9717dea5-d8b5-4441-999e-3bc1fc76186f"
 				}
 			],
+			"id": "eb7e3fea-aea1-4e91-83bf-92e3dd0540d6",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -514,6 +530,7 @@
 							"item": [
 								{
 									"name": "Récupérer la liste des BlueApps",
+									"id": "c37e0f19-556d-4a33-b62d-8b831044bc9c",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -544,6 +561,7 @@
 								},
 								{
 									"name": "Récupérer une BlueApp",
+									"id": "2966aa5e-75ff-4c3e-a847-c430060c386f",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -574,6 +592,7 @@
 								},
 								{
 									"name": "Récupérer la structure d'une Blueapp",
+									"id": "af73d118-d8a1-4bb9-b9cc-ca866327110f",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -604,6 +623,7 @@
 								},
 								{
 									"name": "Récupérer la liste des repertoires",
+									"id": "ed8a4a68-4fdc-4ab2-a815-890a467daf3b",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -634,6 +654,7 @@
 								},
 								{
 									"name": "Récupérer un répertoire",
+									"id": "404f6a18-1633-42e5-bdca-d3da215901da",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -664,6 +685,7 @@
 								},
 								{
 									"name": "Récupérer le thème BlueApp",
+									"id": "97701ed0-3a6f-4487-824b-d79472fcd77c",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -692,13 +714,15 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "4d0e0ed2-50d8-4eee-b697-140a12bf6f87"
 						},
 						{
 							"name": "BlueAppEntry",
 							"item": [
 								{
 									"name": "Récupérer une Saisie",
+									"id": "6bc15c9c-7ed9-410d-b798-fbc04a792f0c",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -727,7 +751,8 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "4e8cb669-7d7f-408f-aed1-0259091efddf"
 						},
 						{
 							"name": "User",
@@ -737,6 +762,7 @@
 									"item": [
 										{
 											"name": "Récupérer un utilisateur",
+											"id": "6ab2ee43-bbfb-4636-85e1-19f2a2450905",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -767,6 +793,7 @@
 										},
 										{
 											"name": "Récupérer la liste des utilisateurs",
+											"id": "41cd9f73-c21c-45f7-87bc-a0ae56bc8516",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -795,13 +822,15 @@
 											},
 											"response": []
 										}
-									]
+									],
+									"id": "2d8d4aaa-e590-46e1-ad8b-ef3a713d2c96"
 								},
 								{
 									"name": "Group",
 									"item": [
 										{
 											"name": "Récupérer un groupe",
+											"id": "a5d91b13-2830-40e6-974e-fb2c87f01787",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -832,6 +861,7 @@
 										},
 										{
 											"name": "Récupérer un type de groupe",
+											"id": "231efccd-ffcd-4a91-841a-b5e19b0d409c",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -862,6 +892,7 @@
 										},
 										{
 											"name": "Récupérer la liste des type de groupe",
+											"id": "89a35a8a-4238-4ae2-8f27-3a6f1febba8b",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -892,6 +923,7 @@
 										},
 										{
 											"name": "Récupérer la liste des  groupes",
+											"id": "92bddfe0-fafb-407b-a226-60fdfa5e286b",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -920,13 +952,15 @@
 											},
 											"response": []
 										}
-									]
+									],
+									"id": "064bba21-c04f-4583-9207-c5478fc6558a"
 								},
 								{
 									"name": "Entity",
 									"item": [
 										{
 											"name": "Récupérer une entité",
+											"id": "bde4e540-f184-400a-a0f0-866e9a243daa",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -957,6 +991,7 @@
 										},
 										{
 											"name": "Récupérer un repertoire d'entité",
+											"id": "dd132085-4d29-4ef1-99e1-80afceac4b6a",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -987,6 +1022,7 @@
 										},
 										{
 											"name": "Récupérer la liste des entités",
+											"id": "c224f8d3-4382-4585-abc4-04d7a9744434",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -1017,6 +1053,7 @@
 										},
 										{
 											"name": "Récupérer la liste des répertoire d'entité",
+											"id": "ae1ef7c5-2001-4ef6-ad6c-65f4543bb3b4",
 											"request": {
 												"method": "POST",
 												"header": [
@@ -1045,11 +1082,14 @@
 											},
 											"response": []
 										}
-									]
+									],
+									"id": "0a387323-6f40-4b0e-a42e-c4f07caa60a5"
 								}
-							]
+							],
+							"id": "c8326da7-6a66-4a2e-abb8-fc2db807c10b"
 						}
-					]
+					],
+					"id": "75e941e0-b553-4358-88ec-8bc00f7cfb8a"
 				},
 				{
 					"name": "Rest",
@@ -1059,6 +1099,7 @@
 							"item": [
 								{
 									"name": "Récupérer la liste des BlueApps",
+									"id": "34b70a63-acdc-4d8e-a662-345fd4cb1da8",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1092,6 +1133,7 @@
 								},
 								{
 									"name": "Récupérer une BlueApp",
+									"id": "09f01ad0-4d87-413a-bd0d-603c8686629f",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1122,6 +1164,7 @@
 											],
 											"variable": [
 												{
+													"id": "9316398d-20d9-456f-a951-265732272cb8",
 													"key": "id",
 													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 													"description": "Identifiant de la BlueApp"
@@ -1133,6 +1176,7 @@
 								},
 								{
 									"name": "Récupérer la structure d'une BlueApp",
+									"id": "aafeb0da-d056-47ca-bbb7-23db3826649d",
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1154,6 +1198,7 @@
 											],
 											"variable": [
 												{
+													"id": "c1fc695a-b8e4-4f26-8b8a-f8375549ff5d",
 													"key": "id",
 													"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 													"description": "Identifiant de la BlueApp"
@@ -1165,6 +1210,7 @@
 								},
 								{
 									"name": "Récupérer la liste des répertoires blueapp",
+									"id": "2ca6addd-4b92-414a-8801-91ad7aefaa90",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1198,6 +1244,7 @@
 								},
 								{
 									"name": "Récupérer un répertoire",
+									"id": "94053e99-c324-48e6-9b99-6bc07d726478",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1228,6 +1275,7 @@
 											],
 											"variable": [
 												{
+													"id": "900834c3-c064-4337-9618-11b77fe4aa4c",
 													"key": "id",
 													"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
 													"description": "Identifiant du répertoire"
@@ -1239,6 +1287,7 @@
 								},
 								{
 									"name": "Récupérer le theme des BlueApp",
+									"id": "a729bdc9-ed28-4d5c-b7d9-f3d9f1af579a",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1269,6 +1318,7 @@
 											],
 											"variable": [
 												{
+													"id": "a77f1d92-64ba-4130-8457-45d4d8a46dfe",
 													"key": "entityId",
 													"value": "1"
 												}
@@ -1277,13 +1327,15 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "90166c94-0a48-4999-b1e2-a5ec2d9ffc64"
 						},
 						{
 							"name": "BlueAppEntry",
 							"item": [
 								{
 									"name": "Créer une nouvelle saisie",
+									"id": "75e57215-df5b-41fa-93a0-57e74f9437ad",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1324,6 +1376,7 @@
 											],
 											"variable": [
 												{
+													"id": "63e52c96-d0ee-43e5-8f52-2a564b40884c",
 													"key": "blueAppId",
 													"value": null,
 													"description": "Identifiant de la BlueApp"
@@ -1335,6 +1388,7 @@
 								},
 								{
 									"name": "Récupération d'une saisie",
+									"id": "967e7f7f-7b9c-4fee-b9ff-6a72a57bb11b",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1367,11 +1421,13 @@
 											],
 											"variable": [
 												{
+													"id": "aa0db0d3-f26f-44d7-a104-fdaa94d0efc8",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
+													"id": "5413ad8c-1ae3-452b-9fe1-20b6cdca7519",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1383,6 +1439,7 @@
 								},
 								{
 									"name": "Mettre à jour une saisie",
+									"id": "39cab4b5-1cca-4cc3-a2f7-98e38b2958d1",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1424,11 +1481,13 @@
 											],
 											"variable": [
 												{
+													"id": "c9ded1dd-5e48-4bdd-a70a-bd9c126a911f",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
+													"id": "9c30f8f5-7c48-423b-a536-a3971db4c51e",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1440,6 +1499,7 @@
 								},
 								{
 									"name": "Créer une nouvelle version d'une saisie",
+									"id": "823136ef-aa11-4c70-ab24-bc2ab280562a",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1481,11 +1541,13 @@
 											],
 											"variable": [
 												{
+													"id": "13a99972-7838-444d-b8a7-0c59e18a30b5",
 													"key": "blueAppId",
 													"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 													"description": "Identifiant de la BlueApp"
 												},
 												{
+													"id": "4d830c84-5458-47b6-90ef-cc655f2fdcd1",
 													"key": "id",
 													"value": null,
 													"description": "Identifiant de la saisie"
@@ -1495,13 +1557,15 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "5173e143-02cc-44af-99c6-0c7b89fa4043"
 						},
 						{
 							"name": "Client",
 							"item": [
 								{
 									"name": "Récupérer la liste des applications enregistrées",
+									"id": "e8f79bf7-bc33-40e6-8603-0837acd7a257",
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1526,6 +1590,7 @@
 								},
 								{
 									"name": "Enregistrer une nouvelle application",
+									"id": "6b3ea63c-27c8-4ab4-93a5-55b42c5bf1ac",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1559,6 +1624,7 @@
 								},
 								{
 									"name": "Récupérer une seule application",
+									"id": "c28c59c0-f856-4103-a20d-11ba984a7a76",
 									"request": {
 										"method": "GET",
 										"header": [
@@ -1580,6 +1646,7 @@
 											],
 											"variable": [
 												{
+													"id": "06c752a1-4e89-4ef5-9d94-be4a1f9dd566",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1591,6 +1658,7 @@
 								},
 								{
 									"name": "Modifier une application",
+									"id": "668eb401-7ee4-4810-ad4b-bca2878755c6",
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -1621,6 +1689,7 @@
 											],
 											"variable": [
 												{
+													"id": "fcd83db4-22af-4aac-9b8c-7ba02ecad9df",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1632,6 +1701,7 @@
 								},
 								{
 									"name": "Supprimer une application",
+									"id": "f5c0a6d5-171f-4d00-806a-6e93d339709a",
 									"request": {
 										"method": "DELETE",
 										"header": [
@@ -1653,6 +1723,7 @@
 											],
 											"variable": [
 												{
+													"id": "372eff32-ed5e-4c02-b0fc-bdb3ea847125",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1664,6 +1735,7 @@
 								},
 								{
 									"name": "Récupérer une seule application Copy",
+									"id": "a128d010-7197-4e9e-9627-1797f2895927",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1695,6 +1767,7 @@
 											],
 											"variable": [
 												{
+													"id": "df194bd8-0c2c-463e-b9c4-d5672693136d",
 													"key": "client_id",
 													"value": "cdee73bb-7024-42d0-8855-ef7a706e14b6",
 													"description": "Identifiant du client"
@@ -1705,6 +1778,7 @@
 									"response": []
 								}
 							],
+							"id": "b00327ef-f4dd-4ad5-a400-fcef0213f03a",
 							"auth": {
 								"type": "bearer",
 								"bearer": [
@@ -1757,6 +1831,7 @@
 											}
 										}
 									],
+									"id": "35fea3f8-1d68-4369-b9ca-61c227dba3f9",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1834,6 +1909,7 @@
 											}
 										}
 									],
+									"id": "69ade79c-7668-438c-8882-a14ab1b7601f",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -1884,13 +1960,15 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "68366f96-91e5-4e4b-8506-ccf9d3486e36"
 						},
 						{
 							"name": "User",
 							"item": [
 								{
 									"name": "Récupérer la liste des Utilisateurs",
+									"id": "a04dc4a5-96f5-45bb-9f9a-9b0f8e77c5b3",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1924,6 +2002,7 @@
 								},
 								{
 									"name": "Récupérer la liste des Entités",
+									"id": "1bf24416-0740-4a85-85b3-07a656fdd876",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1957,6 +2036,7 @@
 								},
 								{
 									"name": "Récupérer la liste des répertoires d'entité",
+									"id": "ff00441f-b49a-4283-9779-edfa40bfd8b8",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -1990,6 +2070,7 @@
 								},
 								{
 									"name": "Récupérer un Utilisateur",
+									"id": "a77736aa-0137-45f7-8f51-0bfe6553c212",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2020,6 +2101,7 @@
 											],
 											"variable": [
 												{
+													"id": "ddd6bd35-8d8c-42c3-9a71-6be536d49d72",
 													"key": "id",
 													"value": "3",
 													"description": "Identifiant de l'utilisateur"
@@ -2031,6 +2113,7 @@
 								},
 								{
 									"name": "Récupérer une entité",
+									"id": "99e4923f-b77e-4903-8e64-6c1f2467c361",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2061,6 +2144,7 @@
 											],
 											"variable": [
 												{
+													"id": "560de1a0-a01e-40c9-b980-4ab09f175fb8",
 													"key": "id",
 													"value": "1",
 													"description": "Identifiant de l'entité"
@@ -2072,6 +2156,7 @@
 								},
 								{
 									"name": "Récupérer un groupe",
+									"id": "800bd4e8-2e58-4ae0-bb75-da63a994aed1",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2102,6 +2187,7 @@
 											],
 											"variable": [
 												{
+													"id": "63c5e2e8-3e78-48e5-99a4-bc26692272d7",
 													"key": "id",
 													"value": "2",
 													"description": "Identifiant du groupe"
@@ -2113,6 +2199,7 @@
 								},
 								{
 									"name": "Récupérer la liste des groupes",
+									"id": "a83f46bf-a130-4d43-98a5-175bf0a09d0a",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2147,6 +2234,7 @@
 								},
 								{
 									"name": "Récupérer un type de groupe",
+									"id": "de99dbf0-ed89-4bf9-95ff-e08950045877",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2177,6 +2265,7 @@
 											],
 											"variable": [
 												{
+													"id": "145a887f-05a1-4945-bcb1-67d507e8ff81",
 													"key": "id",
 													"value": "1003",
 													"description": "Identifiant du type de groupe"
@@ -2188,6 +2277,7 @@
 								},
 								{
 									"name": "Récupérer un la liste des types de groupe",
+									"id": "8c5578d5-9c4a-4e3b-a61d-24b9a4769842",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2221,6 +2311,7 @@
 								},
 								{
 									"name": "Récupérer un répertoire d'entité",
+									"id": "e5bc269f-7135-454b-9f98-051addb27855",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2251,6 +2342,7 @@
 											],
 											"variable": [
 												{
+													"id": "8b4ee6c7-a909-4079-9012-fce88a036375",
 													"key": "id",
 													"value": "1",
 													"description": "Identifiant du repertoire"
@@ -2260,11 +2352,14 @@
 									},
 									"response": []
 								}
-							]
+							],
+							"id": "d32e54e6-d4dc-438d-8a55-0358368bce64"
 						}
-					]
+					],
+					"id": "daa2b60e-5bbd-4821-9c2d-c3f05a92f37d"
 				}
 			],
+			"id": "699d9d7e-4014-4943-b749-c187addfb999",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
@@ -2340,6 +2435,7 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des BlueApps",
+							"id": "378282fa-ee5b-4a00-a2f6-623fcf3bc21f",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2368,6 +2464,7 @@
 						},
 						{
 							"name": "Récupérer une BlueApp",
+							"id": "d22b7f27-5645-4338-9355-ab2c5e705c9c",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2393,6 +2490,7 @@
 									],
 									"variable": [
 										{
+											"id": "684474b0-0282-47dc-b5c8-809ed257efe8",
 											"key": "id",
 											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 											"description": "Identifiant de la BlueApp"
@@ -2404,6 +2502,7 @@
 						},
 						{
 							"name": "Récupérer la structure d'une BlueApp",
+							"id": "5389a981-aa38-492a-b6f0-9b075fd90136",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2430,6 +2529,7 @@
 									],
 									"variable": [
 										{
+											"id": "32f32e02-8219-44c0-b519-800968275e33",
 											"key": "id",
 											"value": "01G2W6C9SGTR50GAP5C8WMERVR",
 											"description": "Identifiant de la BlueApp"
@@ -2441,6 +2541,7 @@
 						},
 						{
 							"name": "Récupérer la liste des répertoires blueapp",
+							"id": "9b20c987-c0dc-42d1-8e88-d3088bceb6f9",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2469,6 +2570,7 @@
 						},
 						{
 							"name": "Récupérer un répertoire",
+							"id": "89b28bd8-4c41-4ba7-8ebc-3122c9d7d4d8",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2494,6 +2596,7 @@
 									],
 									"variable": [
 										{
+											"id": "be94fd74-959f-474b-b0cf-015eb45455d1",
 											"key": "id",
 											"value": "01FV1X0A8SXM9S41VXCJP4EVTG",
 											"description": "Identifiant du répertoire"
@@ -2505,6 +2608,7 @@
 						},
 						{
 							"name": "Récupérer le thème BlueApp de l'entité",
+							"id": "3e9c6156-797d-47d4-b5c3-b23c09285183",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2536,6 +2640,7 @@
 									],
 									"variable": [
 										{
+											"id": "235d7d51-f7fb-447b-aa79-8077955b49bf",
 											"key": "entityId",
 											"value": "1"
 										}
@@ -2544,13 +2649,15 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "db7377ba-ccbe-4188-b442-bf9f7a7e2468"
 				},
 				{
 					"name": "Entry",
 					"item": [
 						{
 							"name": "Créer une nouvelle saisie",
+							"id": "df59890f-f98f-439e-b2c7-73ad7dd6ea1d",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2586,6 +2693,7 @@
 									],
 									"variable": [
 										{
+											"id": "1fbd7341-c338-4061-916d-fd96e62f9dd0",
 											"key": "blueAppId",
 											"value": null,
 											"description": "Identifiant de la BlueApp"
@@ -2597,6 +2705,7 @@
 						},
 						{
 							"name": "Récupération d'une saisie",
+							"id": "f46f5a89-c28e-48e1-ad9c-59719a738ec5",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2624,11 +2733,13 @@
 									],
 									"variable": [
 										{
+											"id": "711de601-afd9-43b3-bfda-51a3bbcdaf98",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
+											"id": "19dd1a0c-c894-415f-a361-beeabcc5a530",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2640,6 +2751,7 @@
 						},
 						{
 							"name": "Mettre à jour une saisie",
+							"id": "b41dc772-fedc-4403-8a2a-fa19a1a2f90c",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -2676,11 +2788,13 @@
 									],
 									"variable": [
 										{
+											"id": "e0ac4029-cfda-401f-918d-14273d590579",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
+											"id": "4668ab5f-3c21-469a-a51e-27f8a5bf547a",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2692,6 +2806,7 @@
 						},
 						{
 							"name": "Créer une nouvelle version d'une saisie",
+							"id": "110c5e44-3b60-4b3a-927b-48345fdf1efc",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2728,11 +2843,13 @@
 									],
 									"variable": [
 										{
+											"id": "442f1ec0-ffa4-4103-965a-23ab61659a33",
 											"key": "blueAppId",
 											"value": "01FV1X0AASFPKAMEH1B6VDQAZS",
 											"description": "Identifiant de la BlueApp"
 										},
 										{
+											"id": "6ee4d346-bcc6-440f-badf-69fcb12a43c7",
 											"key": "id",
 											"value": null,
 											"description": "Identifiant de la saisie"
@@ -2742,13 +2859,15 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "d126a4fc-5236-4d13-a2ae-e1c7415d5605"
 				},
 				{
 					"name": "File",
 					"item": [
 						{
 							"name": "Sauvegarder un fichier",
+							"id": "c4c0b5e8-aa7c-4927-8572-4c049a1451fb",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2785,15 +2904,18 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "a7790e86-09a6-4f28-8ec7-c8db90aa6c13"
 				}
-			]
+			],
+			"id": "1c736d07-cc8e-4571-901d-709805120552"
 		},
 		{
 			"name": "Client-Manager",
 			"item": [
 				{
 					"name": "GetClientFromGatewayService",
+					"id": "1115a798-1721-4c2d-adc3-8fed0ef41c5d",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2823,7 +2945,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "f9b190b7-99d8-4887-a9aa-4b7bc994e568"
 		},
 		{
 			"name": "User",
@@ -2833,6 +2956,7 @@
 					"item": [
 						{
 							"name": "Récupérer la liste des utilisateurs",
+							"id": "f7ea0fe1-9ced-4c30-beb6-94537101bb91",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2861,6 +2985,7 @@
 						},
 						{
 							"name": "Récupérer un utilisateur",
+							"id": "224f3e88-4452-48a8-bd4d-267040e4ffc9",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2886,6 +3011,7 @@
 									],
 									"variable": [
 										{
+											"id": "3a23ed8c-0936-4359-b7fb-54766de49ece",
 											"key": "id",
 											"value": "3"
 										}
@@ -2894,13 +3020,15 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "b842028a-6524-4bf1-a0ff-99bc3b21e26d"
 				},
 				{
 					"name": "Entity",
 					"item": [
 						{
 							"name": "Récupérer une entité",
+							"id": "49fe6f3e-810a-48f0-ae2d-0f500c180b81",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2926,6 +3054,7 @@
 									],
 									"variable": [
 										{
+											"id": "88adcaae-4e16-4de8-badf-52a5db3adf87",
 											"key": "id",
 											"value": "1"
 										}
@@ -2936,6 +3065,7 @@
 						},
 						{
 							"name": "Récupérer un repertoire d'entité",
+							"id": "2a4bd12f-be52-4a9a-90ed-26c4a1f1d4c8",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2961,6 +3091,7 @@
 									],
 									"variable": [
 										{
+											"id": "155bdaef-8ee0-4150-93c7-66be3ee36eea",
 											"key": "id",
 											"value": "1"
 										}
@@ -2971,6 +3102,7 @@
 						},
 						{
 							"name": "Récupérer la liste des entités",
+							"id": "c1ac53ad-885c-4389-b6ee-71afc4b6aa3a",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -2999,6 +3131,7 @@
 						},
 						{
 							"name": "Récupérer la liste des repertoire d'entités",
+							"id": "8aaf4758-6abb-4c4a-9953-a64179d68b10",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3025,13 +3158,15 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "12d03469-bbf8-4bef-85b7-8a3803aaf570"
 				},
 				{
 					"name": "Group",
 					"item": [
 						{
 							"name": "Récupérer un groupe",
+							"id": "6f7a2a15-4510-4949-8366-d77993bb6a05",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3057,6 +3192,7 @@
 									],
 									"variable": [
 										{
+											"id": "51ab484c-dc70-47dc-80ae-381a866412de",
 											"key": "id",
 											"value": "1"
 										}
@@ -3067,6 +3203,7 @@
 						},
 						{
 							"name": "Récupérer un type de groupe",
+							"id": "9565eb70-805f-47ea-8395-734bac41baa3",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3099,6 +3236,7 @@
 									],
 									"variable": [
 										{
+											"id": "c4e84587-ea20-4902-8f55-e80aae54693d",
 											"key": "id",
 											"value": "1003"
 										}
@@ -3109,6 +3247,7 @@
 						},
 						{
 							"name": "Récupérer la liste des types de groupe",
+							"id": "31bc9b27-6979-4c5c-afd3-50094584aed3",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3144,6 +3283,7 @@
 						},
 						{
 							"name": "Récupérer la liste des groupes",
+							"id": "a8f73e6a-4f1f-49cb-8162-c85417f629c8",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -3187,9 +3327,11 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"id": "0c8b9fbb-84a2-4790-9a3f-a7290851626e"
 				}
-			]
+			],
+			"id": "6341e9cf-3d24-4f82-8a58-f46e790b6f78"
 		}
 	],
 	"event": [
@@ -3210,6 +3352,15 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "url",
+			"key": "url",
+			"value": "",
+			"type": "any",
+			"description": "URL for the request."
 		}
 	]
 }
